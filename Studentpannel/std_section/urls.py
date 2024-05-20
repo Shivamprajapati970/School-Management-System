@@ -11,5 +11,7 @@ urlpatterns = [
     path("dashboard/",dashboard),
     path("viewstudents/",viewstudents),
     path("courses/",courses),
+#
+    path("registration/",create_student),
     
 ]
