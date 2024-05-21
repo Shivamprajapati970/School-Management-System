@@ -13,5 +13,5 @@ urlpatterns = [
     path("courses/",courses),
 #
     path("registration/",create_student),
-    
+    path("add_courses/",add_courses),
 ]

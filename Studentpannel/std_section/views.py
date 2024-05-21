@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse, redirect
 from .models import *
 from django.contrib.auth.hashers import make_password
 
@@ -34,3 +34,14 @@ def viewstudents(request):
 
 def courses(request):
     return render(request,"courses.html")
+
+def add_courses(request):
+    if request.method=="POST":
+        course_name=request.POST["corses"]
+        fees=request.POST["fees"]
+        duration=request.POST["duration"]
+        if Course.objects.filter(course_name=course_name).exists():
+            return HttpResponse("Course already exists.")
+        else:
+            Course.objects.create(course_name=course_name,fees=fees,duration=duration)
+            return redirect("/courses/")

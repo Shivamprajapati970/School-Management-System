@@ -5,3 +5,9 @@ class Student(models.Model):
     name=models.CharField(max_length=200)
     email=models.EmailField(max_length=200)
     password=models.CharField(max_length=200)
+
+class Course(models.Model):
+    course_name=models.CharField(max_length=200)
+    fees=models.IntegerField()
+    duration=models.CharField(max_length=100)
+    
