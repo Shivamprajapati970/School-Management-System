@@ -1,6 +1,6 @@
 from django.shortcuts import render,HttpResponse, redirect
 from .models import *
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password,check_password
 
 # Create your views here.
 
@@ -11,13 +11,13 @@ def create_student(request):
     if request.method == "POST":
         name = request.POST["name"]
         email = request.POST["email"]
-        password=request.POST["password"]
-        Password = make_password(request.POST["password"])
+        #password=request.POST["password"]
+        password = make_password(request.POST["password"])
         if Student.objects.filter(email=email).exists():
             return HttpResponse("Email already exist")
         else:
             Student.objects.create(name=name,email=email,password=password)
-            return HttpResponse("Student created successgully.")
+            return redirect("/")
 
 def profile(request):
     return render(request,"profile.html")
@@ -30,10 +30,16 @@ def dashboard(request):
     return render(request,"dashboard.html")
 
 def viewstudents(request):
-    return render(request,"viewstudents.html")
+    course_obj=Course.objects.all()
+    return render(request,"viewstudents.html",{"course_obj":course_obj})
+
+'''def data(request):
+    user_obj=User.objects.all()
+    return render(request,"table.html",{"user_obj":user_obj})'''
 
 def courses(request):
-    return render(request,"courses.html")
+    course_obj=Course.objects.all()
+    return render(request,"courses.html",{"course_obj":course_obj})
 
 def add_courses(request):
     if request.method=="POST":
@@ -45,3 +51,22 @@ def add_courses(request):
         else:
             Course.objects.create(course_name=course_name,fees=fees,duration=duration)
             return redirect("/courses/")
+        
+def sign_in(request):
+    if request.method=="POST":
+        email=request.POST['email']
+        user_password=request.POST['password']
+        if Student.objects.filter(email=email).exists():
+            obj=Student.objects.get(email=email)
+            password=obj.password
+            if check_password(user_password,password):
+                return redirect('/dashboard/')
+            else:
+                 return HttpResponse("Password incorrect.")
+        else:
+            return HttpResponse("email not registered.")
+        
+def delete_course(request,pk):
+    Course.objects.get(id=pk).delete()
+    return redirect("/courses/")
+        

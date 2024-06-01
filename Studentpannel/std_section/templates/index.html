@@ -70,23 +70,23 @@
                 </div>
               </div>
               <div class="card-body">
-                <form role="form" class="text-start">
-				  
+                <form role="form" action="/sign_in/" method="post" class="text-start">
+				          {% csrf_token %}
                   <div class="input-group input-group-outline my-3">
-                    <label class="form-label">username</label>
-                    <input type="text" class="form-control">
+                    <label class="form-label">email</label>
+                    <input type="text" name="email" class="form-control">
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" name="password" class="form-control">
                   </div>
                   
                   <div class="text-center">
-                    <a href="pg_/" type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</a>
+                    <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</button>
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?
-                    <a href="/sign-up.html" class="text-primary text-gradient font-weight-bold">Sign up</a>
+                    <a href="/sign_up/" class="text-primary text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </form>
               </div>

@@ -14,4 +14,6 @@ urlpatterns = [
 #
     path("registration/",create_student),
     path("add_courses/",add_courses),
+    path("sign_in/",sign_in),
+    path("delete_course/<int:pk>/",delete_course,name="delete"),
 ]
