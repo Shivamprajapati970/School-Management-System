@@ -66,7 +66,20 @@ def sign_in(request):
         else:
             return HttpResponse("email not registered.")
         
-def delete_course(request,pk):
+def delete_course(request, pk):
     Course.objects.get(id=pk).delete()
     return redirect("/courses/")
+
+def update_course(request, uid):
+    course=Course.objects.get(id=uid)
+    return render(request,"update_course.html",{'course':course})
+
+def course_update(request):
+    if request.method == "POST":
+        uid=request.POST['uid']
+        course_name=request.POST['corses']
+        fees=request.POST['fees']
+        duration=request.POST['duration']
+        Course.objects.filter(id=uid).update(course_name=course_name,fees=fees,duration=duration)
+        return redirect('/courses/')
         

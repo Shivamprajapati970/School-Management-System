@@ -47,14 +47,7 @@
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link text-white " href="/tenants.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Tenants</span>
-          </a>
-        </li> -->
+        
         <li class="nav-item">
           <a class="nav-link text-white " href="/employees.html">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -157,7 +150,7 @@
               </div>
               <div class="text-end pt-1">
                 <a class="btn bg-gradient-dark mb-0" href="javascript:;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                    class="material-icons text-sm">add</i>&nbsp;&nbsp;Add New Courses</a>
+                    class="material-icons text-sm">add</i>&nbsp;&nbsp;Update Courses</a>
               </div>
             </div>
 
@@ -166,7 +159,7 @@
 
       </div>
 
-      <div class="row mt-4 mb-4">
+      <!--div class="row mt-4 mb-4">
         <div class="col-lg-12 col-md-6 mb-md-0 mb-4">
           <div class="card">
             <div class="card-header pb-0">
@@ -214,7 +207,7 @@
                       </td>
                       <td class="text-center text-sm">
                         <a href="{% url 'delete' i.id %}" type="submit" class="btn btn-primary" >Delete</a>
-                        <a href="{% url 'course_update' i.id %}"  type="submit" class="btn btn-info" >Update</a>
+                        <a  type="submit" class="btn btn-info" >Update</a>
                       </td>
                     </tr>
                       {% endfor %} 
@@ -226,7 +219,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div-->
 
 
 
@@ -241,13 +234,15 @@
             </div>
             <div class="modal-body">
               <div class="card-body">
-                <form role="form" action="/add_courses/" method="post">
+                <form role="form" action="/update_course/" method="POST">
                   {% csrf_token %}
                   <div class="row">
                     <div class="col-lg-6 col-md-6">
+                      <input type="hidden" value={{course.id}} name="uid">
                       <div class="input-group input-group-outline mb-3">
+                        
                         <label class="form-label" >Course</label>
-                        <input type="text" name="corses" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <input type="text" value={{course.course_name}} name="corses" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                       </div>
                     </div>
 
@@ -255,7 +250,7 @@
                       <div class="col-lg-6 col-md-6">
                         <div class="input-group input-group-outline mb-3">
                           <label class="form-label">Fees</label>
-                          <input type="text" name="fees" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                          <input type="text" value={{course.fees}} name="fees" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                         </div>
                       </div>
                     </div>
@@ -263,7 +258,7 @@
                     <div class="col-lg-6 col-md-6">
                       <div class="input-group input-group-outline mb-3">
                         <label class="form-label">Duration</label>
-                        <input type="text" name="duration" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <input type="text" value={{course.duration}} name="duration" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                       </div>
                     </div>
 
