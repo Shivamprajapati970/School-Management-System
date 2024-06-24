@@ -41,31 +41,17 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" href="/dashboard.html">
+          <a class="nav-link text-white" href="/dashboard/">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">dashboard</i>
             </div>
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
+        
+        
         <li class="nav-item">
-          <a class="nav-link text-white " href="tenants.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">Tenants</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white " href="employees.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">receipt_long</i>
-            </div>
-            <span class="nav-link-text ms-1">Employees</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="/courses.html">
+          <a class="nav-link text-white active bg-gradient-primary" href="/courses/">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">view_in_ar</i>
             </div>
@@ -78,7 +64,7 @@
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="/profile.html">
+          <a class="nav-link text-white " href="/profile/">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">person</i>
             </div>
@@ -94,7 +80,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="/sign-up.html">
+          <a class="nav-link text-white " href="/sign_up/">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">assignment</i>
             </div>
@@ -197,68 +183,20 @@
                         Duration</th>
                     </tr>
                   </thead>
+                  {% for i in std_detail_obj %}
                   <tbody>
                     <tr>
-                      <td class="align-middle text-sm">Surya</td>
-                      <td class="align-middle text-sm">Suryapratapsoni@gmail.com</td>
-                      <td class="align-middle text-center text-sm">3265478914</td>
-                      <td class="text-center text-sm">MGC Satna</td>
-                      <td class="text-center text-sm">BCA</td>
-                      <td class="text-center text-sm">Nodejs</td>
-                      <td class="text-center text-sm">35000</td>
-                      <td class="text-center text-sm">6 Months</td>
-                    </tr>
-                    <tr>
-                      <td class="align-middle text-sm">Surya</td>
-                      <td class="align-middle text-sm">Suryapratapsoni@gmail.com</td>
-                      <td class="align-middle text-center text-sm">3265478914</td>
-                      <td class="text-center text-sm">MGC Satna</td>
-                      <td class="text-center text-sm">BCA</td>
-                      <td class="text-center text-sm">Nodejs</td>
-                      <td class="text-center text-sm">35000</td>
-                      <td class="text-center text-sm">6 Months</td>
-                    </tr>
-                    <tr>
-                      <td class="align-middle text-sm">Surya</td>
-                      <td class="align-middle text-sm">Suryapratapsoni@gmail.com</td>
-                      <td class="align-middle text-center text-sm">3265478914</td>
-                      <td class="text-center text-sm">MGC Satna</td>
-                      <td class="text-center text-sm">BCA</td>
-                      <td class="text-center text-sm">Nodejs</td>
-                      <td class="text-center text-sm">35000</td>
-                      <td class="text-center text-sm">6 Months</td>
-                    </tr>
-                    <tr>
-                      <td class="align-middle text-sm">Surya</td>
-                      <td class="align-middle text-sm">Suryapratapsoni@gmail.com</td>
-                      <td class="align-middle text-center text-sm">3265478914</td>
-                      <td class="text-center text-sm">MGC Satna</td>
-                      <td class="text-center text-sm">BCA</td>
-                      <td class="text-center text-sm">Nodejs</td>
-                      <td class="text-center text-sm">35000</td>
-                      <td class="text-center text-sm">6 Months</td>
-                    </tr>
-                    <tr>
-                      <td class="align-middle text-sm">Surya</td>
-                      <td class="align-middle text-sm">Suryapratapsoni@gmail.com</td>
-                      <td class="align-middle text-center text-sm">3265478914</td>
-                      <td class="text-center text-sm">MGC Satna</td>
-                      <td class="text-center text-sm">BCA</td>
-                      <td class="text-center text-sm">Nodejs</td>
-                      <td class="text-center text-sm">35000</td>
-                      <td class="text-center text-sm">6 Months</td>
-                    </tr>
-                    <tr>
-                      <td class="align-middle text-sm">Surya</td>
-                      <td class="align-middle text-sm">Suryapratapsoni@gmail.com</td>
-                      <td class="align-middle text-center text-sm">3265478914</td>
-                      <td class="text-center text-sm">MGC Satna</td>
-                      <td class="text-center text-sm">BCA</td>
-                      <td class="text-center text-sm">Nodejs</td>
-                      <td class="text-center text-sm">35000</td>
-                      <td class="text-center text-sm">6 Months</td>
+                      <td class="align-middle text-sm"><a href="{% url 'profile_std' i.id %}">{{i.name}}</a></td>
+                      <td class="align-middle text-sm">{{i.email}}</td>
+                      <td class="align-middle text-center text-sm">{{i.mobile_no}}</td>
+                      <td class="text-center text-sm">{{i.college}}</td>
+                      <td class="text-center text-sm">{{i.degree}}</td>
+                      <td class="text-center text-sm">{{i.course.course_name }}</td>
+                      <td class="text-center text-sm">{{i.course.fees}}</td>
+                      <td class="text-center text-sm">{{i.course.duration}}</td>
                     </tr>
                   </tbody>
+                  {% endfor %}
                 </table>
               </div>
             </div>
@@ -278,48 +216,50 @@
             </div>
             <div class="modal-body">
               <div class="card-body">
-                <form role="form">
+
+                <form role="form" action="/add_student/" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
                   <div class="row">
                     <div class="col-lg-6 col-md-6">
                       <div class="input-group input-group-outline mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <input type="text" name="name" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                       <div class="input-group input-group-outline mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <input type="email" name="email" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                       <div class="input-group input-group-outline mb-3">
                         <label class="form-label">Mobile No.</label>
-                        <input type="text" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <input type="text" name="mobile_no" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                       </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6">
                       <div class="input-group input-group-outline mb-3">
                         <label class="form-label">College</label>
-                        <input type="text" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <input type="text" name="college" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                       </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6">
                       <div class="input-group input-group-outline mb-3">
                         <label class="form-label">Degree</label>
-                        <input type="text" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                        <input type="text" name="degree" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
                       </div>
                     </div>
 
 
                     <div class="col-lg-6 col-md-6">
                       <div class="input-group input-group-outline mb-3">
-                        <select class="form-select form-control" placeholder="courses" onfocus="focused(this)"
+                        <select name="course" class="form-select form-control" placeholder="courses" onfocus="focused(this)"
                           onfocusout="defocused(this)" aria-label="Default select example">
                           {% for i in course_obj %}
-                          <option class="fw-lighter" selected>{{i.course_name}}</option>
+                          <option class="fw-lighter" value={{i.id}}  selected>{{i.course_name}} {{i.fees}} {{i.duration}} </option>
                           {% endfor %}
                         </select>
                       </div>
@@ -331,20 +271,20 @@
                     </div> -->
                     
                     <div class="input-group input-group-outline mb-3">
-                      <textarea class="form-control col-lg-12 col-md-6" placeholder="Leave a comment here"
+                      <textarea class="form-control col-lg-12 col-md-6" name="address" placeholder="Address"
                       id="floatingTextarea"></textarea>
                     </div>
                     
                     
-                    <!--div class="col-lg-12 col-md-12 my-2">
+                    <div class="col-lg-12 col-md-12 my-2">
                       <div class="d-flex align-items-center justify-content-lg-between">
                         <label for="myfile">Upload Image : </label>
-                        <input type="file" id="myfile" name="myfile">
+                        <input type="file" id="myfile" name="image">
                       </div>
-                    </div-->
+                    </div>
 
                     <div class="text-center">
-                      <button type="button" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-2 mb-0"
+                      <button type="submit" class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-2 mb-0"
                         data-bs-dismiss="modal">Submit</button>
                     </div>
                   </div>

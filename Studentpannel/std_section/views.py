@@ -19,6 +19,10 @@ def create_student(request):
             Student.objects.create(name=name,email=email,password=password)
             return redirect("/")
 
+def profile_std(request,pk):
+    student_obj=Student_detail.objects.get(id=pk)
+    return render(request,"profile.html",{"student_obj":student_obj})
+
 def profile(request):
     return render(request,"profile.html")
 
@@ -28,7 +32,7 @@ def sign_up(request):
 
 def dashboard(request):
     return render(request,"dashboard.html")
-
+    
 def viewstudents(request):
     course_obj=Course.objects.all()
     std_detail_obj=Student_detail.objects.all()
