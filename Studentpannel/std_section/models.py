@@ -14,10 +14,10 @@ class Course(models.Model):
 
 class Student_detail(models.Model):
     name=models.CharField(max_length=200)
-    email=models.EmailField(max_length=200)
+    email=models.EmailField(unique=True)
     mobile_no=models.CharField(max_length=13)
     college=models.CharField(max_length=200)
     degree=models.CharField(max_length=200)
     course=models.ForeignKey(Course,on_delete=models.CASCADE)
-    comment=models.CharField(max_length=500)
-    
+    address=models.TextField()
+    image=models.FileField(upload_to='Student_detail/',max_length=100)

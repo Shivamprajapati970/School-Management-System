@@ -31,7 +31,8 @@ def dashboard(request):
 
 def viewstudents(request):
     course_obj=Course.objects.all()
-    return render(request,"viewstudents.html",{"course_obj":course_obj})
+    std_detail_obj=Student_detail.objects.all()
+    return render(request,"viewstudents.html",{"course_obj":course_obj, "std_detail_obj":std_detail_obj})
 
 '''def data(request):
     user_obj=User.objects.all()
@@ -83,3 +84,20 @@ def course_update(request):
         Course.objects.filter(id=uid).update(course_name=course_name,fees=fees,duration=duration)
         return redirect('/courses/')
         
+def add_student(request):
+    if request.method == "POST":
+        name=request.POST["name"]
+        email=request.POST["email"]
+        mobile_no=request.POST["mobile_no"]
+        college=request.POST["college"]
+        degree=request.POST["degree"]
+        course_id=request.POST['course']
+        new_course=Course.objects.get(id=course_id)
+        address=request.POST["address"]
+        image=request.FILES.get("image")
+        if Student_detail.objects.filter(email=email).exists():
+            return HttpResponse("Student already exist.")
+        else:
+            Student_detail.objects.create(name=name,email=email,mobile_no=mobile_no,college=college,degree=degree,course=new_course,address=address,image=image)
+            return redirect("/viewstudents/")
+
